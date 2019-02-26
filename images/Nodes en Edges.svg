@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="1440" height="1024" fill="#FFDD03"/>
+    <g transform="translate(314 178)">
+      <circle cx="743" cy="70" r="70" fill="#000000"/>
+      <circle cx="70" cy="70" r="70" fill="#000000"/>
+      <path stroke="#000000" stroke-width="30" d="M743,70 L70,70" stroke-linecap="square"/>
+    </g>
+    <g transform="translate(314 443)">
+      <circle cx="743" cy="70" r="70" fill="#000000"/>
+      <circle cx="70" cy="70" r="70" fill="#000000"/>
+      <path stroke="#000000" stroke-width="30" d="M743,70 L70,70" stroke-linecap="square"/>
+      <polygon fill="#000000" points="405.625 37 466.25 103 345 103" transform="rotate(90 405.625 70)"/>
+    </g>
+    <g transform="translate(314 708)">
+      <circle cx="743" cy="70" r="70" fill="#000000"/>
+      <circle cx="70" cy="70" r="70" fill="#000000"/>
+      <path stroke="#000000" stroke-width="30" d="M743,70 L70,70" stroke-linecap="square"/>
+      <g fill="#000000" transform="translate(287 9)">
+        <polygon points="204.625 28 265.25 94 144 94" transform="rotate(90 204.625 61)"/>
+        <polygon points="33.625 28 94.25 94 -27 94" transform="rotate(-90 33.625 61)"/>
+      </g>
+    </g>
+    <text fill="#000000" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="60" font-style="condensed" font-weight="bold">
+      <tspan x="331" y="141">Node</tspan>
+    </text>
+    <text fill="#000000" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="60" font-style="condensed" font-weight="bold">
+      <tspan x="661.467" y="349">Edge</tspan>
+    </text>
+    <text fill="#000000" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="60" font-style="condensed" font-weight="bold">
+      <tspan x="509.123" y="626.5">Edge met richting</tspan>
+    </text>
+    <text fill="#000000" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="60" font-style="condensed" font-weight="bold">
+      <tspan x="416.179" y="904">Edge met twee richtingen</tspan>
+    </text>
+  </g>
+</svg>

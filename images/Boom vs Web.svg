@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="1440" height="1024" fill="#FFDD03"/>
+    <g transform="translate(79 257)">
+      <circle cx="140" cy="381" r="70" fill="#000000"/>
+      <circle cx="70" cy="591" r="70" fill="#000000"/>
+      <circle cx="233" cy="70" r="70" fill="#000000"/>
+      <circle cx="345" cy="284" r="70" fill="#000000"/>
+      <circle cx="456" cy="521" r="70" fill="#000000"/>
+      <circle cx="257" cy="591" r="70" fill="#000000"/>
+      <path stroke="#000000" stroke-width="30" d="M233 70L345 284M233 70L140 381M257 591L140 381M70 591L140 381M456 521L345 284" stroke-linecap="square"/>
+    </g>
+    <g transform="translate(750 317)">
+      <circle cx="70" cy="259" r="70" fill="#000000"/>
+      <circle cx="213" cy="513" r="70" fill="#000000"/>
+      <circle cx="518" cy="279" r="70" fill="#000000"/>
+      <circle cx="473" cy="545" r="70" fill="#000000"/>
+      <circle cx="353" cy="70" r="70" fill="#000000"/>
+      <circle cx="283" cy="279" r="70" fill="#000000"/>
+      <path stroke="#000000" stroke-width="30" d="M70 259L473 545M70 259L213 513M518 279L473 545M283 279L473 545M283 279L353 70M518 279L353 70M283 279L213 513" stroke-linecap="square"/>
+    </g>
+    <text fill="#000000" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="60" font-style="condensed" font-weight="bold">
+      <tspan x="101" y="188">Boom is hierarchisch</tspan>
+    </text>
+    <text fill="#000000" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="60" font-style="condensed" font-weight="bold">
+      <tspan x="812" y="117">In een web (graph) </tspan> <tspan x="812" y="188">kan alles met alles </tspan> <tspan x="812" y="259">connecties hebben</tspan>
+    </text>
+  </g>
+</svg>

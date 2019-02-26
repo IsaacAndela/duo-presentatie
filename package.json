@@ -1,0 +1,22 @@
+{
+  "name": "duo-presentatie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Isaac Andela <mail@isaacandela.nl>",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "mdx-deck": "^1.10.0",
+    "mdx-deck-live-code": "^1.0.1",
+    "raw-loader": "^1.0.0"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "dependencies": {
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  }
+}

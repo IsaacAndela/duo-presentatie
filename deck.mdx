@@ -1,0 +1,356 @@
+export { yellow as theme } from 'mdx-deck/themes'
+import { Head, Appear } from 'mdx-deck'
+import { LiveCode } from 'mdx-deck-live-code'
+
+<Head>
+  <title>Headless CMS & Universal Javascript</title>
+</Head>
+
+# Headless CMS &<br/> Universal Javascript
+
+---
+
+## Verdeling verantwoordelijkheden
+
+- Backenders: data
+- Frontenders: weergave & gedrag
+  <Appear>
+    <ul>
+      <li>Inclusief server side HTML & HTTP headers</li>
+    </ul>
+  </Appear>
+
+---
+
+## Headless CMS
+
+- CMS levert alleen data, geen templating
+- Data is via een API beschikbaar
+
+---
+
+## Universal Javascript
+
+- Zelfde Javascript maakt op de server en in de browser HTML
+- Website wordt op de server gerenderd ivm snelheid en SEO
+- Er kunnen uitzonderingen worden gemaakt voor onderdelen die alleen in de browser gerenderd moeten worden
+
+---
+
+## Voordelen voor frontenders
+
+- Volledige controle over HTML
+- Beschikbare data inzichtelijk
+- Geen verschillen tussen HTML op server en HTML in browser
+- Componenten maken met mockdata
+
+---
+
+## Voordelen backenders
+
+- Backenders kunnen zich concentreren op data leveren
+- Niks te maken met HTML
+- Ouput API testbaar
+- Bug op de website? Als de API correcte data levert is het een fout van de frontend
+  <Appear>
+    <ul>
+      <li>Omgekeerd geldt het zelfde</li>
+    </ul>
+  </Appear>
+
+---
+
+## Voordelen Universal Javascript voor product owner
+
+- Geen dubbel werk server-HTML en client-HTML
+  - Minder kans op fouten door uiteenlopende implementaties
+- Frontenders kunnen makkelijker goede HTML voor SEO maken
+- Frontenders kunnen makkelijker goede HTML voor toegankelijkheid maken
+
+---
+
+# Frontend stack
+
+---
+
+## Runtimes
+
+- [NodeJS](http://nodejs.org)
+- Browsers
+- Via [Webpack](https://webpack.js.org) & [Babel](https://babeljs.io)
+
+---
+
+## View layer
+
+- [ReactJS](https://reactjs.org)
+- [Styled Components](https://www.styled-components.com)
+
+---
+
+## ReactJS
+
+---
+
+### Declarative
+
+React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+Declarative views make your code more predictable and easier to debug.
+
+---
+
+### Component-Based
+
+Build encapsulated components that manage their own state, then compose them to make complex UIs.
+Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+
+---
+
+<LiveCode
+  size="large"
+  providerProps={{
+    noInline: true,
+  }}
+  title="ReactJS"
+  code={require('!raw-loader!./examples/react.js')}
+/>
+---
+
+### Styled Components
+
+- Variabelen delen tussen Javascript en CSS
+- Geen `cascade` en `specificity`
+- Explicite relatie tussen CSS en Components
+- Toegang tot properties van components
+
+---
+
+import styled from 'styled-components'
+
+<LiveCode
+  size="large"
+  providerProps={{
+    noInline: true,
+    scope: { styled },
+  }}
+  title="Styled Components"
+  code={require('!raw-loader!./examples/styledComponents.js')}
+/>
+
+---
+
+## Data layer
+
+- Cache serverdata
+- UI State
+
+---
+
+## Data layer optie: Redux
+
+- Er gebeurt iets: `dispatch` een `action`
+- De verandering in de `state` wordt verwerkt door de `reducer`
+- De nieuwe `state` wordt opgeslagen in de `store`
+- De app wordt opnieuw gerenderd
+
+---
+
+import { createStore } from 'redux'
+import { Provider, connect } from 'react-redux'
+
+<LiveCode
+  size="large"
+  providerProps={{
+    style: { zIndex: 100 },
+    noInline: true,
+    scope: { createStore, Provider, connect },
+  }}
+  title="Redux"
+  code={require('!raw-loader!./examples/redux.js')}
+/>
+
+---
+
+## Data layer optie: React Component State
+
+- [React Component State](https://reactjs.org/docs/hooks-state.html) voor locale data
+- [React Context](https://reactjs.org/docs/context.html) voor globale data
+
+---
+
+# Code splitting
+
+- [Webpack](https://webpack.js.org)
+- Begin er direct mee
+- [Loadable Components](https://www.smooth-code.com/open-source/loadable-components/)
+- [React code splitting documentatie](https://reactjs.org/docs/code-splitting.html)
+
+---
+
+# Builden: roll your own, NextJS of Gatsby
+
+- Webpack configureren is niet leuk
+- Universal Javascript met [NextJS](https://nextjs.org)
+- Of radicaler: static site generator [Gatsby](https://www.gatsbyjs.org/)
+- Eventueel containerizen met [Docker](https://www.docker.com)
+
+---
+
+# Component library en documentatie
+
+- [Docz](https://www.docz.site) combineert Markdown met Reactcomponenten
+- Gebaseerd op [MDX](https://mdxjs.com/)
+
+---
+
+# HTML uit CMS
+
+- In backend omzetten naar JSON
+- Filteren (bijv. geen script tags toestaan)
+  - Whitelist tags
+  - Whitelist attributes
+  - Whitelist origin iFrame src
+- Frontend kan renderen met styled components
+- Goed unittesten!
+
+---
+
+```JSON
+{
+  "tag": "div",
+  "attributes": {
+    "className": ""
+  },
+  "children": [
+    {
+      "tag": "p",
+      "attributes": {
+
+      },
+      "children": [
+        {
+          "text": "Hello World"
+        }
+      ]
+    }
+  ]
+}
+```
+
+---
+
+# Automatic code formatting
+
+- [Prettier](https://prettier.io)
+- Geen discussies over code stijl bij mergerequest
+- Je wilt nooit meer zonder
+
+---
+
+# Unittests
+
+- Gebruik [Jest](https://jestjs.io/)
+- [React Testing Library](https://github.com/kentcdodds/react-testing-library)
+
+---
+
+# API server
+
+## [GraphQL](https://graphql.org)🤩 versus REST😭
+
+---
+
+## Problemen met REST
+
+- Overfetching
+- Underfetching
+- Regide
+
+---
+
+## Oplossingen met GraphQL
+
+- 1 endpoint voor alles
+- Backend stelt data beschikbaar
+- Frontend bepaalt wat opgehaald wordt
+- Graph theorie
+- API explorer via Playground
+- Flexibel
+
+---
+
+## Graph theorie
+
+---
+
+import { TreeVsWeb } from './images/TreeVsWeb.js'
+
+<TreeVsWeb />
+
+---
+
+import { NodesAndEdges } from './images/NodesAndEdges.js'
+
+<NodesAndEdges />
+
+---
+
+## GraphQL Demo
+
+---
+
+import { Scrollable } from './Components'
+
+<Scrollable>
+
+# Links
+
+## ReactJS (viewlayer)
+
+- [ReactJS](https://reactjs.org)
+- [Styled Components](https://www.styled-components.com)
+- [Loadable Components](https://www.smooth-code.com/open-source/loadable-components/)
+- [React Router](https://www.github.com/ReactTraining/react-router)
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+
+## Redux (datalayer)
+
+- [Redux](https://redux.js.org)
+- [Redux Starter Kit](https://redux-starter-kit.js.org)
+
+## Build
+
+- [Babel](https://babeljs.io)
+- [Webpack](https://webpack.js.org)
+- [NextJS](https://nextjs.org)
+- [Gatsby](https://www.gatsbyjs.org/)
+
+## Utilities
+
+- [Date-fns](https://date-fns.org/) (beter dan moment.js)
+
+## Code formatting
+
+- [Prettier](https://prettier.io)
+
+## Unittests
+
+- [Jest](https://jestjs.io)
+
+## GraphQL
+
+- [GraphQL](https://graphql.org)
+- [Apollo](https://www.apollographql.com)
+
+## Component library & documenteren
+
+- [Docz](https://www.docz.site)
+- [MDX](https://mdxjs.com/)
+
+## NodeJS
+
+- [NodeJS](https://nodejs.org/en/)
+- [ExpressJS](https://expressjs.com)
+- [ExpressJS Helmet](https://helmetjs.github.io)
+
+</Scrollable>
