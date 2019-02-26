@@ -8,11 +8,14 @@
   "devDependencies": {
     "mdx-deck": "^1.10.0",
     "mdx-deck-live-code": "^1.0.1",
+    "gh-pages": "^2.0.1",
     "raw-loader": "^1.0.0"
   },
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx"
+    "build": "mdx-deck build deck.mdx",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "react-redux": "^6.0.1",
