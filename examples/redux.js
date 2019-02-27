@@ -66,6 +66,7 @@ const ShowCount = connectCount(({ count }) => {
 const Increment = connect()(({ dispatch, amount = 1 }) => {
   return (
     <button
+      style={{ fontSize: '1em' }}
       onClick={() => {
         dispatch(increment(amount))
       }}
@@ -77,6 +78,7 @@ const Increment = connect()(({ dispatch, amount = 1 }) => {
 const Decrement = connect()(({ dispatch, amount = 1 }) => {
   return (
     <button
+      style={{ fontSize: '1em' }}
       onClick={() => {
         dispatch(decrement(amount))
       }}
@@ -88,6 +90,7 @@ const Decrement = connect()(({ dispatch, amount = 1 }) => {
 const Reset = connect()(({ dispatch }) => {
   return (
     <button
+      style={{ fontSize: '1em' }}
       onClick={() => {
         dispatch(reset())
       }}
